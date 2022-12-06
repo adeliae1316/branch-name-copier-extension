@@ -44,7 +44,7 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
  * Set current branch name to clipboard.
  * 
  */
-const setCurrentBranchName2Clipboard = async () => {
+const setCurrentBranchName2Clipboard = () => {
   let isCopied = false;
 
   if (!isCopied) {
@@ -52,7 +52,7 @@ const setCurrentBranchName2Clipboard = async () => {
     if (first &&
       first.querySelector('span') &&
       first.querySelector('span').textContent) {
-      await navigator.clipboard.writeText(first.querySelector('span').textContent);
+      navigator.clipboard.writeText(first.querySelector('span').textContent);
       isCopied = true;
     }
   }
@@ -62,7 +62,7 @@ const setCurrentBranchName2Clipboard = async () => {
     if (first &&
       first.querySelector('summary') &&
       first.querySelector('summary').title != 'Switch branches or tags') {
-      await navigator.clipboard.writeText(first.querySelector('summary').title);
+      navigator.clipboard.writeText(first.querySelector('summary').title);
       isCopied = true;
     }
   }
@@ -72,7 +72,7 @@ const setCurrentBranchName2Clipboard = async () => {
     if (first &&
       first.querySelector('span') &&
       first.querySelector('span').textContent) {
-      await navigator.clipboard.writeText(first.querySelector('span').textContent);
+      navigator.clipboard.writeText(first.querySelector('span').textContent);
       isCopied = true;
     }
   }
@@ -89,6 +89,6 @@ const setCurrentBranchName2Clipboard = async () => {
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    func: setCurrentBranchName2ClipBoard
+    func: setCurrentBranchName2Clipboard
   });
 });
