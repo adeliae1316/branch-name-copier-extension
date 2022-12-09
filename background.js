@@ -41,6 +41,14 @@ chrome.tabs.onActivated.addListener((activeInfo) => {
 });
 
 /**
+ * EventListener of tabs.onUpdated.
+ * 
+ */
+chrome.tabs.onUpdated.addListener((tabId) => {
+  updateVisibility(tabId);
+});
+
+/**
  * Set current branch name to clipboard.
  * 
  */
