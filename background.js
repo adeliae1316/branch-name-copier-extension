@@ -66,7 +66,7 @@ const setCurrentBranchName2Clipboard = () => {
   }
 
   if (!isCopied) {
-    const first = document.getElementById("branch-select-menu");
+    const first = document.querySelector("#branch-select-menu.js-branch-select-menu");
     if (first &&
       first.querySelector('summary') &&
       first.querySelector('summary').title != 'Switch branches or tags') {
@@ -76,7 +76,7 @@ const setCurrentBranchName2Clipboard = () => {
   }
 
   if (!isCopied) {
-    const first = document.getElementById("branch-select-menu");
+    const first = document.querySelector("#branch-select-menu.js-branch-select-menu");
     if (first &&
       first.querySelector('span') &&
       first.querySelector('span').textContent) {
